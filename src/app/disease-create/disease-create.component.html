@@ -1,0 +1,53 @@
+<div class="d-flex flex-column flex-md-row align-items-center p-3 px-md-4 mb-3 bg-white border-bottom shadow-sm">
+  <h5 class="my-0 mr-md-auto font-weight-normal">Sakya Health Admin Portal</h5>
+  <nav class="my-2 my-md-0 mr-md-3">
+    <a class="btn btn-outline-primary" routerLinkActive="active" routerLink="/disease-list">View list</a>
+  </nav>
+  <a class="btn btn-outline-primary" routerLinkActive="active" routerLink="/disease-create">Add Disease</a>
+</div>
+<div class="row justify-content-center">
+  <div class="col-md-4 register-employee">
+    <!-- form card register -->
+    <div class="card-body">
+      <form [formGroup]="employeeForm" (ngSubmit)="onSubmit()">
+        <div class="form-group">
+          <label for="inputName">Name</label>
+          <input class="form-control" type="text" formControlName="name">
+          <!-- error -->
+          <div class="invalid-feedback" *ngIf="submitted && myForm.name.errors?.required">
+            Name is required.
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label for="inputEmail3">Symptoms</label>
+          <input class="form-control" type="text" formControlName="symptoms">
+          <!-- error -->
+          <div class="invalid-feedback" *ngIf="submitted && myForm.symptoms.errors?.required">
+            Enter  symptoms.
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label for="inputVerify3">Causes</label>
+          <input class="form-control" type="text" formControlName="causes">
+          <!-- error -->
+          <div class="invalid-feedback" *ngIf="submitted && myForm.causes.errors?.required">
+            Enter your causes.
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="inputVerify3">Preventions</label>
+          <input class="form-control" type="text" formControlName="preventions">
+          <!-- error -->
+          <div class="invalid-feedback" *ngIf="submitted && myForm.preventions.errors?.required">
+            Enter your preventions.
+          </div>
+        </div>
+        <div class="form-group">
+          <button class="btn btn-outline-primary" type="submit">Add Disease</button>
+        </div>
+      </form>
+    </div>
+  </div><!-- form card register -->
+</div>
